@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Got Beer?</title>
-  <link rel="stylesheet" href="file.css" media="none" onload="if(media!='all')media='all'">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-</head>
-<body>
 
-    <div class="box">
-      <div class="enterButton">
-        <button class="gotBeer">Got Beer?</button>
-      </div>
-      <div class="searchBox hidden">
-        <h1>Find a breweriers near you!</h1>
-          <form class="beerForm">
-            <label for="search-term"></label>
-            <input type="text" name="search-term" id="searchBeer" class="searchBeer" placeholder ="Search Breweries by City!">
-            <input type="submit" value="" class="getBeer" >
-          </form>
-          <p id="js-error-message" class="error-message"></p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Trip Planner" />
+    <meta property="og:image" content="https://github.com/annalyncs/my-portfolio/blob/master/images/screenshots/trip-planner-home.png?raw=true" />
+    <meta property="og:description" content="A responsive website site that pulls data from a third party API, https://OpenWeatherMap.com and https://Foursquare.com, to present search results in a useful way." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://annalyncs.github.io/thinkful-api-capstone-trip-planner/" />
+    <title>Trip Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Megrim|Montserrat:400,600|Raleway:400,700" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main role=main>
+        <div class="start-display" id="start-page">
+            <header class="row" role="banner">
+                <h1 class="logo">Trip Planner</h1>
+                <p class="api-info">Powered by OpenWeatherMap and Foursquare API</p>
+                <p>Plan your next trip by finding out the current weather and the best things to do in a new city!</p>
+            </header>
+
+            <form action="#" class="search-form row" id="search-query-form">
+                <input type="text" placeholder="Enter a city" class="search-query" id="search-term" required>
+                <button type="submit" class="submit-button">Search</button>
+            </form>
         </div>
-      </div>
-   
-  <div class="second alsoHidden">
-      <div class="beerResults">
-          <h2>Beer List</h2>
-          <ul class="beerList"></ul>
-      </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <script src="file.js"></script>
+
+        <section class="weather row" id="weather-display">
+
+        </section>
+
+        <nav role="navigation" class="navigation hide" id="results-navigation">
+            <div class="options row">
+                <button class="category-button" id="food-button">FOOD</button>
+                <button class="category-button" id="nightlife-button">NIGHTLIFE</button>
+                <button class="category-button" id="shops-button">SHOPS</button>
+                <button class="category-button" id="outdoors-button">OUTDOORS</button>
+                <button class="category-button" id="entertainment-button">ARTS</button>
+            </div>
+        </nav>
+
+        <section id="foursquare-results" class="row">
+
+        </section>
+
+        <footer class="footer">
+            <a href="https://github.com/annalyncs" target="_blank"><img src="social-icons/github-icon-80.png" alt="github icon"></a>&nbsp;
+            <a href="https://www.linkedin.com/in/annalyn-sarmiento/" target="_blank"><img src="social-icons/linkedin-icon-80.png" alt="linkedin icon"></a>&nbsp;
+            <a href="mailto:annalyn.c.s@gmail.com"><img src="social-icons/mail-icon-80.png" alt="email icon"></a>
+            <p>Created by Annalyn Sarmiento</p>
+        </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYwwQ-wTWZ6jI75jcsRz4if7dv30i5evo&libraries=places&callback=activatePlacesSearch"></script>
 </body>
+
 </html>
