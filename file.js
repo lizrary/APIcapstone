@@ -92,7 +92,7 @@ $('.getBeer').on('click', function(event) {
           alert('Please enter a city name!');
       }      
   let fullName = $('#searchBeer').val(); //.split?
-  let searchURL = 'https://api.openbrewerydb.org/breweries';
+  let searchURL = 'https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-radius';
   getBeer(searchURL, fullName);
   
 });
